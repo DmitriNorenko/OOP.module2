@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,20 +11,31 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
+            BaseClass bob = new BaseClass("Иван");
         }
-        class Obj
+        class BaseClass
         {
-            private string name;
-            private string owner;
-            private int length;
-            private int count;
+            protected string Name;
 
-            public Obj(string name, string ownerName, int objLength, int count)
+            public BaseClass(string name)
             {
-                this.name = name;
-                owner = ownerName;
-                length = objLength;
-                this.count = count;
+                Name = name;
+            }
+        }
+
+        class DerivedClass : BaseClass
+        {
+            public string Description;
+
+            public int Counter;
+           public DerivedClass(string name, string description) : base(name) 
+            {
+                Description = description;
+            }
+            public DerivedClass(string name,string description, int counter):base(name)
+            {
+                Description = description;
+                Counter = counter;
             }
         }
     }
