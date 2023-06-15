@@ -12,7 +12,8 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-
+            B a = new D();
+            a.Display();
         }
         class A { public virtual void Display() { Console.WriteLine("A"); } }
         class B : A { public new void Display() { Console.WriteLine("B"); } }
