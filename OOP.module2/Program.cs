@@ -11,27 +11,30 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-          BaseClass baseClass = new BaseClass();
-            DerivedClass derivedClass = new DerivedClass();
-            baseClass.Display();
-            derivedClass.Display();
+         
         }
         class BaseClass
         {
-            public virtual void Display() 
+            public virtual int Counter
             {
-
-                Console.WriteLine("Метод класса BaseClass");
+                get;
+                set;
             }
         }
-        class DerivedClass : BaseClass 
+
+        class DerivedClass : BaseClass
         {
-            public override void Display()
+            public override int Counter
             {
-                Console.WriteLine("Метод класса DerivedClass");
+                get { return Counter; }
+                set 
+                {
+                    if (value >= 0)
+                    {
+                        Counter = value;
+                    }
+                }
             }
         }
-
-
     }
 }
