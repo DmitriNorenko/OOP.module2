@@ -12,14 +12,29 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-            B a = new D();
-            a.Display();
+            IndexingClass array = new IndexingClass(new int[] { 1, 2, 3, 4, 5 });
+            Console.WriteLine(array[4]);
         }
-        class A { public virtual void Display() { Console.WriteLine("A"); } }
-        class B : A { public new void Display() { Console.WriteLine("B"); } }
-        class C : A { public override void Display() { Console.WriteLine("C"); } }
-        class D : B { public new void Display() { Console.WriteLine("D"); } }
-        class E : C { public new void Display() { Console.WriteLine("E"); } }
+        class IndexingClass
+        {
+            private int[] array;
 
+            public IndexingClass(int[] array)
+            {
+                this.array = array;
+            }
+            public int this[int index]
+            {
+                get
+                {
+                    return array[index];
+                }
+                set
+                {
+                    array[index] = value;
+                }
+            }
+        }
     }
+
 }
