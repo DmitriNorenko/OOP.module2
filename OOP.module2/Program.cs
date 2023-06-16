@@ -12,20 +12,20 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-            int num1 = 34;
-            int num2 = 56;
-            Helper.Swap(ref num1, ref num2);
-            Console.WriteLine(num1);
-            Console.WriteLine(num2);
-        }
-        class Helper
-        {
 
-            public static void Swap(ref int a, ref int b)
+        }
+        class Obj
+        {
+            public string Name;
+            public string Description;
+            public static string Parent;
+            public static int DaysInWeek;
+            public static int MaxValue;
+            static Obj()
             {
-                int d = a;
-                a = b;
-                b = d;
+                Parent = "System.Object";
+                DaysInWeek = 7;
+                MaxValue = 2000;
             }
         }
     }
