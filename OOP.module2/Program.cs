@@ -12,27 +12,31 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-            IndexingClass array = new IndexingClass(new int[] { 1, 2, 3, 4, 5 });
-            Console.WriteLine(array[4]);
-        }
-        class IndexingClass
-        {
-            private int[] array;
 
-            public IndexingClass(int[] array)
+        }
+        public abstract class ComputerPart
+        {
+            public abstract void Work();
+        }
+        public class Processor : ComputerPart
+        {
+            public override void Work()
             {
-                this.array = array;
+                Console.WriteLine("Процессор работает.");
             }
-            public int this[int index]
+        }
+        public class MotherBoard : ComputerPart
+        {
+            public override void Work()
             {
-                get
-                {
-                    return array[index];
-                }
-                set
-                {
-                    array[index] = value;
-                }
+                Console.WriteLine("Материнская плата работает");
+            }
+        }
+        public class GraphicCard : ComputerPart
+        {
+            public override void Work()
+            {
+                Console.WriteLine("Видеокарта работает.");
             }
         }
     }
