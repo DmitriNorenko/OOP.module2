@@ -14,30 +14,11 @@ namespace OOP.module2
         {
 
         }
-        public abstract class ComputerPart
+        public class Obj
         {
-            public abstract void Work();
-        }
-        public class Processor : ComputerPart
-        {
-            public override void Work()
-            {
-                Console.WriteLine("Процессор работает.");
-            }
-        }
-        public class MotherBoard : ComputerPart
-        {
-            public override void Work()
-            {
-                Console.WriteLine("Материнская плата работает");
-            }
-        }
-        public class GraphicCard : ComputerPart
-        {
-            public override void Work()
-            {
-                Console.WriteLine("Видеокарта работает.");
-            }
+            public string Name;
+            public string Description;
+            public static int MaxValue = 2000;
         }
     }
 
