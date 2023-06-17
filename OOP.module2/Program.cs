@@ -14,11 +14,11 @@ namespace OOP.module2
         {
 
         }
-        class Car<T>
+        class Car<T1>
         {
-            public T Engine;
+            public T1 Engine;
 
-            public virtual void ChangePart<T>(T newPart)
+            public virtual void ChangePart<T2>(T2 newPart)
             {
 
             }
