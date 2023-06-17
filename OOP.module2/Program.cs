@@ -14,13 +14,27 @@ namespace OOP.module2
         {
 
         }
-        class Record<T1, T2>
+        class Car<T>
         {
-            public T1 Id;
-            public T2 Value;
-            public DateTime Date;
+            public T Engine;
+
+            public virtual void ChangePart<T>(T newPart)
+            {
+
+            }
         }
+        class ElectricEngine { }
+
+        class GasEngine { }
+
+        class Battery { }
+
+        class Differential { }
+
+        class Wheel { }
     }
+
 }
+
 
 
