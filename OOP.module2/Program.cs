@@ -14,24 +14,28 @@ namespace OOP.module2
         {
 
         }
-        class Car<T1>
+        class Car<T1> where T1 : Engine
         {
             public T1 Engine;
 
-            public virtual void ChangePart<T2>(T2 newPart)
+            public virtual void ChangePart<T2>(T2 newPart) where T2 : CarPart
             {
 
             }
         }
-        class ElectricEngine { }
+        class Engine { }
 
-        class GasEngine { }
+        class CarPart { }
 
-        class Battery { }
+        class ElectricEngine : Engine { }
 
-        class Differential { }
+        class GasEngine : Engine { }
 
-        class Wheel { }
+        class Battery : CarPart { }
+
+        class Differential : CarPart { }
+
+        class Wheel : CarPart { }
     }
 
 }
