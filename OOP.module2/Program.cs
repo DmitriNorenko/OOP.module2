@@ -12,9 +12,11 @@ namespace OOP.module2
     {
         static void Main(string[] args)
         {
-
+            ElectricCar car = new ElectricCar();
+            Battery battery = new Battery();
+            car.ChangePart<CarPart>(battery);
         }
-        class Car<TEngine> where TEngine : Engine
+        abstract class Car<TEngine> where TEngine : Engine
         {
             public TEngine Engine;
 
@@ -23,9 +25,23 @@ namespace OOP.module2
 
             }
         }
-        class Engine { }
+        abstract class Engine { }
 
-        class CarPart { }
+        abstract class CarPart { }
+        class ElectricCar : Car<ElectricEngine>
+        {
+            public override void ChangePart<TPart>(TPart newPart)
+            {
+
+            }
+        }
+        class GasCar : Car<GasEngine>
+        {
+            public override void ChangePart<TPart>(TPart newPart)
+            {
+
+            }
+        }
 
         class ElectricEngine : Engine { }
 
